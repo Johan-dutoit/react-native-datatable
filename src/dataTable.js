@@ -96,4 +96,4 @@ DataTable.defaultProps = {
 }
 
 
-export default DataTable;
+module.export = DataTable;
