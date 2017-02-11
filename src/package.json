@@ -19,7 +19,7 @@
     "Tables"
   ],
   "author": "Johan du Toit",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Johan-dutoit/react-native-datatable/issues"
   },
