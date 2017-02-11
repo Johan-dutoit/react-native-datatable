@@ -1,0 +1,3 @@
+rootProject.name = 'DataTableExample'
+
+include ':app'
