@@ -1,0 +1,27 @@
+{
+  "name": "react-native-datatable",
+  "version": "1.0.0",
+  "description": "Data Table for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johan-dutoit/react-native-datatable.git"
+  },
+  "keywords": [
+    "React",
+    "Native",
+    "ReactNative",
+    "Data",
+    "Table",
+    "Tables"
+  ],
+  "author": "Johan du Toit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Johan-dutoit/react-native-datatable/issues"
+  },
+  "homepage": "https://github.com/Johan-dutoit/react-native-datatable#readme"
+}
