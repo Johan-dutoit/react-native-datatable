@@ -1,6 +1,6 @@
 {
   "name": "react-native-datatable",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Data Table for React Native",
   "main": "dataTable.js",
   "scripts": {
