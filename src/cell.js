@@ -6,6 +6,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
+import Style from './style';
 
 class Cell extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class Cell extends React.Component {
 
     render() {
         return (
-            <Text style={this.props.style}>
+            <Text style={[Style.cell, this.props.style]}>
                 {this.props.label}
             </Text>
         );
@@ -23,7 +24,7 @@ class Cell extends React.Component {
 
 Cell.propTypes = {
     label: React.PropTypes.string.isRequired,
-    style: React.PropTypes.object,
+    style: React.PropTypes.number,
 }
 
 

@@ -14,7 +14,6 @@ import Style from './style';
 import Cell from './cell';
 
 class DataTable extends React.Component {
-
     constructor(props) {
         super(props);
 
@@ -34,7 +33,7 @@ class DataTable extends React.Component {
     renderHeader() {
         return (
             <View style={[Style.header, this.props.headerStyle]}>
-                {this.props.fields.map(renderHeaderCell)}
+                {this.props.fields.map(this.renderHeaderCell)}
             </View>
         );
     }
@@ -44,7 +43,7 @@ class DataTable extends React.Component {
             return this.props.renderHeaderCell(label, i);
         }
 
-        return renderCell(label, i)
+        return this.renderCell(label, i, Style.headerCell)
     }
 
     renderTable() {
@@ -60,40 +59,40 @@ class DataTable extends React.Component {
             <View
                 style={Style.row}
                 accessible={true}>
-
-
-                {this.renderCells(row, index)}
+                {this.renderCells(row)}
             </View>
         )
     }
 
-    renderCell(label, key) {
+    renderCells(row) {
+        return Object.keys(row).map((key, i) => {
+            var value = (row[key] || '').toString();
+
+            return this.renderCell(value, i, this.props.cellStyle);
+        })
+    }
+
+    renderCell(label, key, style) {
         return (
             <Cell
                 key={key}
-                style={Style.headerCell}
-                label={label} />
+                style={style}
+                label={label.toString()} />
         );
     }
 }
 
 
 DataTable.propTypes = {
+    fields: React.PropTypes.array,
     dataSource: React.PropTypes.object.isRequired,
     containerStyle: React.PropTypes.number,
+    renderHeaderCell: React.PropTypes.func,
     headerStyle: React.PropTypes.number,
-
-    // renderHeaderCell: React.PropTypes.func,
-    // fields: React.PropTypes.array,
-    // onSort: React.PropTypes.func,
-    // sortField: React.PropTypes.string,
-    // sortOrder: React.PropTypes.string,
-    // orientation: React.PropTypes.string,
+    cellStyle: React.PropTypes.number
 }
 
 DataTable.defaultProps = {
-    orientation: Orientation.PORTRAIT,
 }
 
-
-module.export = DataTable;
+export default DataTable;

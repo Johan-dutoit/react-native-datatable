@@ -5,42 +5,20 @@ export default StyleSheet.create({
         flex: 1,
     },
     header: {
+        minHeight: 35,
         flexDirection: 'row',
-        minHeight: 35
     },
     headerCell: {
-        flex: 1
+        flex: 1,
     },
     row: {
+        flex: 1,
         flexDirection: 'row',
-        flex: 1
     },
-    column: {
-        flexDirection: 'column',
-        justifyContent: 'center',
-        flex: 1
-    },
-
     cell: {
-        height: 35
-    },
-    positiveValue: {
-        color: Color.GREEN,
-    },
-    negativeValue: {
-        color: Color.RED,
-    },
-    noChangeValue: {
-        color: 'black'
-    },
-    numericValue: {
-        textAlign: 'right'
-    },
-    link: {
-        color: Color.LINK_BLUE,
-        textDecorationLine: 'underline'
-    },
-    icon: {
-        textAlign: 'center'
-    },
+        flex: 1,
+        height: 35,
+        borderColor: 'black',
+        borderWidth: 1,
+    }
 });
