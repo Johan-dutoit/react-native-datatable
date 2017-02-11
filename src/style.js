@@ -20,5 +20,6 @@ export default StyleSheet.create({
         height: 35,
         borderColor: 'black',
         borderWidth: 1,
+        padding: 3
     }
 });

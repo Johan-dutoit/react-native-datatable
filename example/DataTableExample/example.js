@@ -29,14 +29,14 @@ export default class DataTableExample extends Component {
                 c: 3
             },
             {
-                a: 1,
-                b: 2,
-                c: 3
+                a: 3,
+                b: 1,
+                c: 2
             },
             {
-                a: 1,
-                b: 2,
-                c: 3
+                a: 2,
+                b: 3,
+                c: 1
             }
         ])
     }
@@ -56,5 +56,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 30,
+    },
+    dataTableContainer: {
+        padding: 3
+    },
+    cellStyle: {
+        // padding: 3,
+        // height: 50
     }
 });
