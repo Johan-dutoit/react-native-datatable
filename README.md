@@ -23,7 +23,7 @@ npm install react-native-datatable --save
 ## <a name='preview'>Preview</a>
 ---
 
-![preview](https://github.com/johan-dutoit/react-native-datatable/preview.gif)
+![](https://github.com/Johan-dutoit/react-native-datatable/blob/master/preview.gif)
 
 
 ## <a name='usage'>Usage</a>
