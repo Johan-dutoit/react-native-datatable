@@ -20,6 +20,12 @@ Install the module with:
 npm install react-native-datatable --save
 ```
 
+## <a name='preview'>Preview</a>
+---
+
+![preview](https://github.com/johan-dutoit/react-native-datatable/preview.gif)
+
+
 ## <a name='usage'>Usage</a>
 ---
 In your code, simply require/import the module:
