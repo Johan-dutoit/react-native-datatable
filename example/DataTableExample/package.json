@@ -9,7 +9,7 @@
   "dependencies": {
     "react": "15.4.2",
     "react-native": "0.41.2",
-    "react-native-datatable": "0.0.6"
+    "react-native-datatables": "0.0.8"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",

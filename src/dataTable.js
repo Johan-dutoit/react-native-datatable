@@ -12,6 +12,7 @@ import {
 
 import Style from './style';
 import Cell from './cell';
+import HeaderCell from './headerCell';
 
 class DataTable extends React.Component {
     constructor(props) {
@@ -19,6 +20,11 @@ class DataTable extends React.Component {
 
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
         this.renderRow = this.renderRow.bind(this);
+        this.onSort = this.onSort.bind(this);
+
+        this.state = {
+            sortedField: null
+        }
     }
 
     render() {
@@ -38,12 +44,20 @@ class DataTable extends React.Component {
         );
     }
 
-    renderHeaderCell(label, i) {
+    renderHeaderCell(field, i) {
         if (this.props.renderHeaderCell) {
-            return this.props.renderHeaderCell(label, i);
+            return this.props.renderHeaderCell(field, i);
         }
 
-        return this.renderCell(label, i, Style.headerCell)
+        return (
+            <HeaderCell
+                key={i}
+                style={this.props.headerCellStyle}
+                highlightColor={this.props.headerHighlightColor}
+                onSort={this.onSort}
+                isSortedField={this.state.sortedField === field}
+                field={field} />
+        )
     }
 
     renderTable() {
@@ -55,9 +69,12 @@ class DataTable extends React.Component {
     }
 
     renderRow(row, sectionId, rowId) {
+
+        var style = rowId % 2 == 0 ? Style.row : Style.altRow
+
         return (
             <View
-                style={Style.row}
+                style={style}
                 accessible={true}>
                 {this.renderCells(row)}
             </View>
@@ -65,34 +82,53 @@ class DataTable extends React.Component {
     }
 
     renderCells(row) {
-        return Object.keys(row).map((key, i) => {
-            var value = (row[key] || '').toString();
+        var keys = Object.keys(row);
 
-            return this.renderCell(value, i, this.props.cellStyle);
-        })
+        return this.props.fields.map((field, index) => {
+            var key = keys[index];
+
+            var value = row[key].toString();
+
+            return (
+                <Cell
+                    key={index}
+                    style={this.props.cellStyle}
+                    label={value} />
+            );
+        });
     }
 
-    renderCell(label, key, style) {
-        return (
-            <Cell
-                key={key}
-                style={style}
-                label={label.toString()} />
-        );
+    onSort(field, isAscending) {
+        if (!this.props.onSort) {
+            return;
+        }
+
+        this.setState({
+            sortedField: field
+        });
+        this.props.onSort(field, isAscending);
     }
 }
 
 
 DataTable.propTypes = {
-    fields: React.PropTypes.array,
+    fields: React.PropTypes.arrayOf(React.PropTypes.shape({
+        label: React.PropTypes.string.isRequired,
+        sortable: React.PropTypes.bool
+    })),
+    onSort: React.PropTypes.func,
     dataSource: React.PropTypes.object.isRequired,
     containerStyle: React.PropTypes.number,
     renderHeaderCell: React.PropTypes.func,
     headerStyle: React.PropTypes.number,
-    cellStyle: React.PropTypes.number
+    headerCellStyle: React.PropTypes.number,
+    headerHighlightColor: React.PropTypes.string,
+    cellStyle: React.PropTypes.number,
+
 }
 
 DataTable.defaultProps = {
+    headerHighlightColor: 'gray'
 }
 
 export default DataTable;
