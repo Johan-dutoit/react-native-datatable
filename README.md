@@ -8,6 +8,7 @@ A simple data table for react native, working both on Android and iOS. <a name='
 
 ## Quick Access
 * <a href='#install'>Installation</a>
+* <a href='#preview'>Preview</a>
 * <a href='#usage'>Usage</a>
 * <a href='#contributing'>Contributing</a>
 
