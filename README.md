@@ -15,7 +15,6 @@ A simple data table for react native, working both on Android and iOS.
 * <a href='#contributing'>Contributing</a>
 
 ## <a name='install'>Installation</a>
----
 Install the module with:
 
 
@@ -24,13 +23,11 @@ npm install react-native-datatable --save
 ```
 
 ## <a name='preview'>Preview</a>
----
 
 ![](https://github.com/Johan-dutoit/react-native-datatable/blob/master/preview.gif)
 
 
 ## <a name='usage'>Usage</a>
----
 In your code, simply require/import the module:
 
 ```js
