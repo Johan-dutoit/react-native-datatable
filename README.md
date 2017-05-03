@@ -39,7 +39,7 @@ import DataTable from 'react-native-datatable';
 ## <a name='properties'>Properties</a>
 
 | Prop | Description | Default |
-|---|---|---|---|
+|---|---|---|
 |**`fields`**|Field Configuration|`null`|
 |**`onSort`**|Function that executes when the user sorts a column|`null`|
 |**`dataSource`**|dataSource used to populate the table|`null`|
